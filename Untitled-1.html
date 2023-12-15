@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <style>
+    #language-container {
+      text-align: center;
+      margin: 20px;
+    }
+
+    #change-language-button {
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #language-display {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="language-container">
+    <button id="change-language-button">言語変更</button>
+    <p id="language-display">現在の言語: 日本語</p>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 言語変更ボタンの要素を取得
+      var changeLanguageButton = document.getElementById('change-language-button');
+
+      // 表示するテキストの要素を取得
+      var languageDisplay = document.getElementById('language-display');
+
+      // 現在の言語を保持する変数
+      var currentLanguage = 'ja';
+
+      // ボタンがクリックされたときの処理
+      changeLanguageButton.addEventListener('click', function () {
+        // 言語を切り替え
+        currentLanguage = currentLanguage === 'ja' ? 'en' : 'ja';
+
+        // テキストを更新
+        languageDisplay.textContent = '現在の言語: ' + (currentLanguage === 'ja' ? '日本語' : 'English');
+      });
+    });
+  </script>
+
+</body>
+</html>
